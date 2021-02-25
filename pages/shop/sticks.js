@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import getAllSticks from '../../lib/fetchSticks';
+import { getAllSticks, getAllStickIds } from '../../lib/fetchSticks';
 
 export async function getStaticProps() {
   const arcadeSticks = await getAllSticks();
+  const stickIds = await getAllStickIds();
+  console.log(stickIds);
   return {
     props: {
       arcadeSticks,
