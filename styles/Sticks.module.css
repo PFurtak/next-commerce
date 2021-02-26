@@ -114,3 +114,8 @@
 .product_price_btn button:hover {
   background-color: #79b0a1;
 }
+
+.title {
+  padding-left: 50px;
+  padding-top: 25px;
+}

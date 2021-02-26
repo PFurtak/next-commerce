@@ -20,35 +20,38 @@ const Sticks = ({ arcadeSticks }) => {
       <Head>
         <title>TQ Arcade | Shop Sticks</title>
       </Head>
-      <h1>Arcade Sticks</h1>
+      <h1 className={styles.title}>Arcade Sticks</h1>
       <br />
-      {arcadeSticks.stock.map(({ brand, model, pid, price, image }) => (
-        <Link href={`/shop/${pid}`} key={pid}>
-          <div className={styles.wrapper}>
-            <div className={styles.product_img}>
-              <Image
-                priority
-                src={image}
-                height={420}
-                width={327}
-                alt={`${brand} ${model}`}
-              />
-            </div>
-            <div className={styles.product_info}>
-              <div className={styles.product_text}>
-                <h1>{model}</h1>
-                <h2>by {brand}</h2>
+      {arcadeSticks.stock.map(
+        ({ brand, model, pid, price, image, description }) => (
+          <Link href={`/shop/${pid}`} key={pid}>
+            <div className={styles.wrapper}>
+              <div className={styles.product_img}>
+                <Image
+                  priority
+                  src={image}
+                  height={420}
+                  width={327}
+                  alt={`${brand} ${model}`}
+                />
               </div>
-              <div className={styles.product_price_btn}>
-                <p>
-                  $<span className={styles.price_number}>{price}</span>
-                </p>
-                <button type='button'>add to cart</button>
+              <div className={styles.product_info}>
+                <div className={styles.product_text}>
+                  <h1>{model}</h1>
+                  <h2>by {brand}</h2>
+                  <p>{description}</p>
+                </div>
+                <div className={styles.product_price_btn}>
+                  <p>
+                    $<span className={styles.price_number}>{price}</span>
+                  </p>
+                  <button type='button'>add to cart</button>
+                </div>
               </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        )
+      )}
     </>
   );
 };
