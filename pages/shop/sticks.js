@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 import { getAllSticks } from '../../lib/fetchSticks';
 import styles from '../../styles/Sticks.module.css';
 
@@ -25,7 +26,13 @@ const Sticks = ({ arcadeSticks }) => {
         <Link href={`/shop/${pid}`} key={pid}>
           <div className={styles.wrapper}>
             <div className={styles.product_img}>
-              <img src={image} height='420' width='327' />
+              <Image
+                priority
+                src={image}
+                height={420}
+                width={327}
+                alt={`${brand} ${model}`}
+              />
             </div>
             <div className={styles.product_info}>
               <div className={styles.product_text}>
