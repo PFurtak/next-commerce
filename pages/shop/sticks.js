@@ -1,17 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import {
-  getAllSticks,
-  getAllStickIds,
-  getStickById,
-} from '../../lib/fetchSticks';
+import { getAllSticks } from '../../lib/fetchSticks';
 
 export async function getStaticProps() {
   const arcadeSticks = await getAllSticks();
-  const stickIds = await getAllStickIds();
-  const stick = await getStickById(4);
-  console.log(stickIds);
-  console.log(stick);
+
   return {
     props: {
       arcadeSticks,
@@ -29,9 +22,11 @@ const Sticks = ({ arcadeSticks }) => {
       <br />
       <ul>
         {arcadeSticks.stock.map(({ brand, model, pid, price }) => (
-          <li key={pid}>
-            {brand} {model} - ${price}
-          </li>
+          <Link href={`/shop/${pid}`} key={pid}>
+            <li>
+              {brand} {model} - ${price}
+            </li>
+          </Link>
         ))}
       </ul>
       <Link href='/'>
