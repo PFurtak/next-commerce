@@ -1,7 +1,7 @@
 const StickData = {
   stock: [
     {
-      pid: 1,
+      pid: '1',
       brand: 'Qanba',
       model: 'Dragon',
       price: 280,
@@ -10,7 +10,7 @@ const StickData = {
       image: '',
     },
     {
-      pid: 2,
+      pid: '2',
       brand: 'Qanba',
       model: 'Obsidian',
       price: 200,
@@ -19,7 +19,7 @@ const StickData = {
       image: '',
     },
     {
-      pid: 3,
+      pid: '3',
       brand: 'Razer',
       model: 'Panthera EVO',
       price: 200,
@@ -28,7 +28,7 @@ const StickData = {
       image: '',
     },
     {
-      pid: 4,
+      pid: '4',
       brand: 'Hori',
       model: 'Fighting Edge',
       price: 200,
@@ -37,7 +37,7 @@ const StickData = {
       image: '',
     },
     {
-      pid: 5,
+      pid: '5',
       brand: 'Victrix',
       model: 'PRO FS',
       price: 350,
@@ -46,7 +46,7 @@ const StickData = {
       image: '',
     },
     {
-      pid: 6,
+      pid: '6',
       brand: 'Hori',
       model: 'RAP 4 Kai',
       price: 150,
