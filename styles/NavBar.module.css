@@ -1,0 +1,25 @@
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0px;
+  background-color: #000;
+  opacity: 90%;
+}
+
+.nav_item {
+  list-style-type: none;
+  color: white;
+  padding: 8px;
+}
+
+.nav_left {
+  display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.nav_right {
+  padding-right: 8px;
+  padding-left: 8px;
+}

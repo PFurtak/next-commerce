@@ -58,6 +58,8 @@
 .title,
 .description {
   text-align: center;
+  color: white;
+  -webkit-text-stroke: 1px black;
 }
 
 .description {
