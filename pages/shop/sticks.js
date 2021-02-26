@@ -29,9 +29,6 @@ const Sticks = ({ arcadeSticks }) => {
           </Link>
         ))}
       </ul>
-      <Link href='/'>
-        <a>Back</a>
-      </Link>
     </>
   );
 };
