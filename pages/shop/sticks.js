@@ -24,8 +24,8 @@ const Sticks = ({ arcadeSticks }) => {
       <br />
       {arcadeSticks.stock.map(
         ({ brand, model, pid, price, image, description }) => (
-          <Link href={`/shop/${pid}`} key={pid}>
-            <div className={styles.wrapper}>
+          <div className={styles.wrapper} key={pid}>
+            <Link href={`/shop/${pid}`}>
               <div className={styles.product_img}>
                 <Image
                   priority
@@ -35,21 +35,23 @@ const Sticks = ({ arcadeSticks }) => {
                   alt={`${brand} ${model}`}
                 />
               </div>
-              <div className={styles.product_info}>
+            </Link>
+            <div className={styles.product_info}>
+              <Link href={`/shop/${pid}`}>
                 <div className={styles.product_text}>
                   <h1>{model}</h1>
                   <h2>by {brand}</h2>
                   <p>{description}</p>
                 </div>
-                <div className={styles.product_price_btn}>
-                  <p>
-                    $<span className={styles.price_number}>{price}</span>
-                  </p>
-                  <button type='button'>add to cart</button>
-                </div>
+              </Link>
+              <div className={styles.product_price_btn}>
+                <p>
+                  $<span className={styles.price_number}>{price}</span>
+                </p>
+                <button type='button'>add to cart</button>
               </div>
             </div>
-          </Link>
+          </div>
         )
       )}
     </>

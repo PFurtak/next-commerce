@@ -3,13 +3,13 @@
   justify-content: space-between;
   margin: 0;
   padding: 0px;
-  border: 1px solid #e7e7e7;
-  background-color: #f3f3f3;
+  background-color: #000;
+  opacity: 90%;
 }
 
 .nav_item {
   list-style-type: none;
-  color: #666;
+  color: white;
   padding: 8px;
 }
 
