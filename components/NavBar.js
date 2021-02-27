@@ -17,7 +17,7 @@ const NavBar = () => {
         </li>
       </ul>
       <ul className={styles.nav_right}>
-        <li className={styles.nav_item}>Cart</li>
+        <li className={styles.nav_item}>Cart (0)</li>
       </ul>
     </nav>
   );
