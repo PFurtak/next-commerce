@@ -27,21 +27,29 @@ const Sticks = ({ arcadeSticks }) => {
           <div className={styles.wrapper} key={pid}>
             <Link href={`/shop/${pid}`}>
               <div className={styles.product_img}>
-                <Image
-                  priority
-                  src={image}
-                  height={420}
-                  width={327}
-                  alt={`${brand} ${model}`}
-                />
+                <a>
+                  <Image
+                    priority
+                    src={image}
+                    height={420}
+                    width={327}
+                    alt={`${brand} ${model}`}
+                  />
+                </a>
               </div>
             </Link>
             <div className={styles.product_info}>
               <Link href={`/shop/${pid}`}>
                 <div className={styles.product_text}>
-                  <h1>{model}</h1>
-                  <h2>by {brand}</h2>
-                  <p>{description}</p>
+                  <a>
+                    <h1>{model}</h1>
+                  </a>
+                  <a>
+                    <h2>by {brand}</h2>
+                  </a>
+                  <a>
+                    <p>{description}</p>
+                  </a>
                 </div>
               </Link>
               <div className={styles.product_price_btn}>
