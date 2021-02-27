@@ -1,6 +1,7 @@
 import { getAllStickIds, getStickById } from '../../lib/fetchSticks';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../../styles/Sticks.module.css';
 
 export async function getStaticPaths() {
@@ -52,6 +53,11 @@ const Product = ({ stickData }) => {
             <button type='button'>add to cart</button>
           </div>
         </div>
+      </div>
+      <div className={styles.backLink}>
+        <Link href='/shop/sticks'>
+          <a>← Back to arcade sticks</a>
+        </Link>
       </div>
     </>
   );
