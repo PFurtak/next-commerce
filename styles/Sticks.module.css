@@ -19,6 +19,10 @@
   border-radius: 7px 0 0 7px;
 }
 
+.product_img a {
+  cursor: pointer;
+}
+
 .product_info {
   float: left;
   height: 420px;
@@ -30,6 +34,10 @@
 .product_text {
   height: 300px;
   width: 327px;
+}
+
+.product_text a {
+  cursor: pointer;
 }
 
 .product_text h1 {
