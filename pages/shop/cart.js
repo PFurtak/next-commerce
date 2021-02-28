@@ -102,9 +102,9 @@ const Cart = () => {
               <img src='/images/minus.svg' alt='' />
             </button>
           </div>
-
           <div className={styles.total_price}>$349</div>
         </div>
+        <div className={styles.cart_total}>Cart Total: $1000</div>
       </div>
     </>
   );

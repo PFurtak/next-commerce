@@ -110,6 +110,17 @@
   font-weight: 300;
 }
 
+.cart_total {
+  display: flex;
+  justify-content: flex-end;
+  height: 60px;
+  border-top: 1px solid #e1e8ee;
+  padding: 20px 30px;
+  color: #5e6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
 @media (max-width: 800px) {
   .shopping-cart {
     width: 100%;
