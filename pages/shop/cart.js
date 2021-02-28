@@ -1,4 +1,5 @@
 import styles from '../../styles/Cart.module.css';
+import Image from 'next/image';
 
 const Cart = () => {
   return (
@@ -9,17 +10,21 @@ const Cart = () => {
         <div className={styles.item}>
           <div className={styles.buttons}>
             <span className={styles.delete_btn}></span>
-            <span className={styles.like_btn}></span>
           </div>
 
           <div className={styles.image}>
-            <img src='' alt='' />
+            <Image
+              priority
+              src={'/images/qb_dragon.jpg'}
+              height={100}
+              width={100}
+              alt={'Qanba Dragon'}
+            />
           </div>
 
           <div className={styles.description}>
-            <span>Common Projects</span>
-            <span>Bball High</span>
-            <span>White</span>
+            <span>Dragon</span>
+            <span>By Qanba</span>
           </div>
 
           <div className={styles.quantity}>
@@ -38,17 +43,21 @@ const Cart = () => {
         <div className={styles.item}>
           <div className={styles.buttons}>
             <span className={styles.delete_btn}></span>
-            <span className={styles.like_btn}></span>
           </div>
 
           <div className={styles.image}>
-            <img src='item-2.png' alt='' />
+            <Image
+              priority
+              src={'/images/hori_FE.jpg'}
+              height={95}
+              width={100}
+              alt={'Hori Fighting Edge'}
+            />
           </div>
 
           <div className={styles.description}>
-            <span>Maison Margiela</span>
-            <span>Future Sneakers</span>
-            <span>White</span>
+            <span>Fighting Edge</span>
+            <span>By Hori</span>
           </div>
 
           <div className={styles.quantity}>
@@ -67,17 +76,21 @@ const Cart = () => {
         <div className={styles.item}>
           <div className={styles.buttons}>
             <span className={styles.delete_btn}></span>
-            <span className={styles.like_btn}></span>
           </div>
 
           <div className={styles.image}>
-            <img src='item-3.png' alt='' />
+            <Image
+              priority
+              src={'/images/vx_pro_fs.jpg'}
+              height={95}
+              width={100}
+              alt={'Victrix PRO FS'}
+            />
           </div>
 
           <div className={styles.description}>
-            <span>Our Legacy</span>
-            <span>Brushed Scarf</span>
-            <span>Brown</span>
+            <span>PRO FS</span>
+            <span>By Victrix</span>
           </div>
 
           <div className={styles.quantity}>
