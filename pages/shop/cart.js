@@ -31,7 +31,7 @@ const Cart = () => {
             <button className={styles.plus_btn} type='button' name='button'>
               <img src='/images/plus.svg' alt='' />
             </button>
-            <input type='text' name='name' value='1' />
+            <input type='text' name='name' defaultValue='1' />
             <button className={styles.minus_btn} type='button' name='button'>
               <img src='/images/minus.svg' alt='' />
             </button>
@@ -64,7 +64,7 @@ const Cart = () => {
             <button className={styles.plus_btn} type='button' name='button'>
               <img src='/images/plus.svg' alt='' />
             </button>
-            <input type='text' name='name' value='1' />
+            <input type='text' name='name' defaultValue='1' />
             <button className={styles.minus_btn} type='button' name='button'>
               <img src='/images/minus.svg' alt='' />
             </button>
@@ -97,7 +97,7 @@ const Cart = () => {
             <button className={styles.plus_btn} type='button' name='button'>
               <img src='/images/plus.svg' alt='' />
             </button>
-            <input type='text' name='name' value='1' />
+            <input type='text' name='name' defaultValue='1' />
             <button className={styles.minus_btn} type='button' name='button'>
               <img src='/images/minus.svg' alt='' />
             </button>
