@@ -5,11 +5,14 @@ const cartReducer = (state, action) => {
     case ADD_ITEM:
       return {
         ...state,
+        items: [action.payload, ...state.items],
+        cartTotal: state.items.length + 1,
       };
 
     case DELETE_ITEM:
       return {
         ...state,
+        items: state.items.filter((item) => item.pid !== action.payload),
       };
 
     case INCREMENT_QTY:
@@ -21,6 +24,9 @@ const cartReducer = (state, action) => {
       return {
         ...state,
       };
+
+    default:
+      return state;
   }
 };
 

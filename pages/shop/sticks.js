@@ -1,8 +1,10 @@
+import React, { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import { getAllSticks } from '../../lib/fetchSticks';
 import styles from '../../styles/Sticks.module.css';
+import CartContext from '../../context/cart/cartContext';
 
 export async function getStaticProps() {
   const arcadeSticks = await getAllSticks();
@@ -15,6 +17,56 @@ export async function getStaticProps() {
 }
 
 const Sticks = ({ arcadeSticks }) => {
+  const cartContext = useContext(CartContext);
+  const { addItem } = cartContext;
+
+  const [item, setItem] = useState({
+    item_pid: '',
+    item_model: '',
+    item_brand: '',
+    item_price: 0,
+    item_qty: 0,
+  });
+
+  const { item_pid, item_model, item_brand, item_price, item_qty } = item;
+
+  const addToCart = (e) => {
+    e.preventDefault();
+    console.log('addToCart called');
+    console.log(item);
+    addItem(item);
+  };
+
+  const updateSelection = (e) => {
+    e.preventDefault();
+
+    const [pid, model, brand, price, qty] = [
+      e.target.getAttribute('item_pid'),
+      e.target.getAttribute('item_model'),
+      e.target.getAttribute('item_brand'),
+      e.target.getAttribute('item_price'),
+      e.target.getAttribute('item_qty'),
+    ];
+
+    setItem({
+      ...item,
+      item_pid: pid,
+      item_model: model,
+      item_brand: brand,
+      item_price: price,
+      item_qty: qty,
+    });
+  };
+
+  useEffect(() => {
+    if (item_pid === '') {
+      return;
+    } else {
+      console.log(item);
+      addItem(item);
+    }
+  }, [item]);
+
   return (
     <>
       <Head>
@@ -39,7 +91,7 @@ const Sticks = ({ arcadeSticks }) => {
               </div>
             </Link>
             <div className={styles.product_info}>
-              <Link href={`/shop/${pid}`}>
+              <Link name='item_price' href={`/shop/${pid}`}>
                 <div className={styles.product_text}>
                   <a>
                     <h1>{model}</h1>
@@ -56,7 +108,18 @@ const Sticks = ({ arcadeSticks }) => {
                 <p>
                   $<span className={styles.price_number}>{price}</span>
                 </p>
-                <button type='button'>add to cart</button>
+
+                <button
+                  type='submit'
+                  name='cart button'
+                  item_pid={pid}
+                  item_model={model}
+                  item_brand={brand}
+                  item_price={price}
+                  item_qty={1}
+                  onClick={(e) => updateSelection(e)}>
+                  add to cart
+                </button>
               </div>
             </div>
           </div>

@@ -5,12 +5,13 @@ import { ADD_ITEM, DELETE_ITEM, INCREMENT_QTY, DECREMENT_QTY } from '../types';
 
 const CartState = (props) => {
   const initialState = {
-    items: null,
+    items: [],
     cartTotal: 0,
   };
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addItem = (item) => {
+    console.log('add item:', item);
     dispatch({ type: ADD_ITEM, payload: item });
   };
 
