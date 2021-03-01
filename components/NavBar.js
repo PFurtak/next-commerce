@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import styles from '../styles/NavBar.module.css';
 import Link from 'next/link';
+import CartContext from '../context/cart/cartContext';
 
 const NavBar = () => {
+  const cartContext = useContext(CartContext);
+  const { cartQty } = cartContext;
+
   return (
     <nav className={styles.nav_container}>
       <ul className={`${styles.nav_left} ${styles.nav}`}>
@@ -19,7 +24,7 @@ const NavBar = () => {
       <ul className={styles.nav_right}>
         <li className={styles.nav_item}>
           <Link href='/shop/cart'>
-            <a>Cart (0)</a>
+            <a>Cart ({cartQty})</a>
           </Link>
         </li>
       </ul>
