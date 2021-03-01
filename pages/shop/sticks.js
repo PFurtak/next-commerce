@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { getAllSticks } from '../../lib/fetchSticks';
 import styles from '../../styles/Sticks.module.css';
 import CartContext from '../../context/cart/cartContext';
+import image from 'next/image';
 
 export async function getStaticProps() {
   const arcadeSticks = await getAllSticks();
@@ -22,13 +23,12 @@ const Sticks = ({ arcadeSticks }) => {
 
   const [item, setItem] = useState({
     item_pid: '',
+    item_image: '',
     item_model: '',
     item_brand: '',
     item_price: 0,
     item_qty: 0,
   });
-
-  const { item_pid, item_model, item_brand, item_price, item_qty } = item;
 
   const addToCart = (e) => {
     e.preventDefault();
@@ -40,17 +40,19 @@ const Sticks = ({ arcadeSticks }) => {
   const updateSelection = (e) => {
     e.preventDefault();
 
-    const [pid, model, brand, price, qty] = [
+    const [pid, model, brand, price, qty, image] = [
       e.target.getAttribute('item_pid'),
       e.target.getAttribute('item_model'),
       e.target.getAttribute('item_brand'),
       e.target.getAttribute('item_price'),
       e.target.getAttribute('item_qty'),
+      e.target.getAttribute('item_image'),
     ];
 
     setItem({
       ...item,
       item_pid: pid,
+      item_image: image,
       item_model: model,
       item_brand: brand,
       item_price: price,
@@ -59,7 +61,7 @@ const Sticks = ({ arcadeSticks }) => {
   };
 
   useEffect(() => {
-    if (item_pid === '') {
+    if (item.item_pid === '') {
       return;
     } else {
       console.log(item);
@@ -113,6 +115,7 @@ const Sticks = ({ arcadeSticks }) => {
                   type='submit'
                   name='cart button'
                   item_pid={pid}
+                  item_image={image}
                   item_model={model}
                   item_brand={brand}
                   item_price={price}

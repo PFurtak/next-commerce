@@ -6,7 +6,8 @@ import { ADD_ITEM, DELETE_ITEM, INCREMENT_QTY, DECREMENT_QTY } from '../types';
 const CartState = (props) => {
   const initialState = {
     items: [],
-    cartTotal: 0,
+    cartQty: 0,
+    isEmpty: true,
   };
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
@@ -31,7 +32,8 @@ const CartState = (props) => {
     <CartContext.Provider
       value={{
         items: state.items,
-        cartTotal: state.cartTotal,
+        cartQty: state.cartQty,
+        isEmpty: state.isEmpty,
         addItem,
         deleteItem,
         incrementQty,

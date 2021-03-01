@@ -5,7 +5,7 @@ import CartContext from '../context/cart/cartContext';
 
 const NavBar = () => {
   const cartContext = useContext(CartContext);
-  const { cartTotal } = cartContext;
+  const { cartQty } = cartContext;
 
   return (
     <nav className={styles.nav_container}>
@@ -24,7 +24,7 @@ const NavBar = () => {
       <ul className={styles.nav_right}>
         <li className={styles.nav_item}>
           <Link href='/shop/cart'>
-            <a>Cart ({cartTotal})</a>
+            <a>Cart ({cartQty})</a>
           </Link>
         </li>
       </ul>

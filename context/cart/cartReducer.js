@@ -6,7 +6,8 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         items: [action.payload, ...state.items],
-        cartTotal: state.items.length + 1,
+        cartQty: state.items.length + 1,
+        isEmpty: false,
       };
 
     case DELETE_ITEM:

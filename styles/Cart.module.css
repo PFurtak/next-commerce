@@ -121,6 +121,12 @@
   font-weight: 400;
 }
 
+.empty_description {
+  width: 100%;
+  text-align: center;
+  margin: 6px 0;
+}
+
 @media (max-width: 800px) {
   .shopping-cart {
     width: 100%;
